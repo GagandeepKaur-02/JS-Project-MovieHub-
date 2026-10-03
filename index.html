@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Hub</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Custom smooth background glow effects */
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(236, 72, 153, 0.2), 0 0 40px rgba(99, 102, 241, 0.2);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans relative overflow-x-hidden flex flex-col">
+
+
+    <!--Navbar -->
+    <nav class="sticky top-0 z-50 border-b border-slate-800 bg-slate-950/70 backdrop-blur-md">
+        <div class="container mx-auto px-4 max-w-6xl h-16 flex items-center justify-between">
+            <a href="#"
+                class="text-xl font-black tracking-wider bg-gradient-to-r from-cyan-400 to-indigo-400 text-transparent bg-clip-text">
+                🎬 MOVIEHUB
+            </a>
+            <div class="flex items-center gap-6 text-sm font-medium text-slate-300">
+                <!-- href me input box ki ID jodi gayi hai taaki click karte hi focus ho jaye -->
+                <a href="#" onclick="event.preventDefault(); document.getElementById('movieInput').focus();"
+                    class="text-pink-400 border-b-2 border-pink-500 pb-1 cursor-pointer">Search</a>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Decorative Background  -->
+    <div class="absolute inset-0 max-w-full min-h-full overflow-hidden pointer-events-none z-0">
+        <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px]">
+        </div>
+        <div class="absolute top-[20%] right-[-10%] w-[600px] h-[600px] bg-pink-600/10 rounded-full blur-[150px]"></div>
+        <div class="absolute bottom-[10%] left-[10%] w-[400px] h-[400px] bg-cyan-600/10 rounded-full blur-[100px]">
+        </div>
+    </div>
+
+
+    <div class="container mx-auto px-4 max-w-6xl relative z-10 pb-5">
+
+        <!-- Heading -->
+        <header class="text-center pt-16 pb-12">
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-pink-500/30 bg-pink-500/10 text-pink-400 text-xs font-semibold uppercase tracking-wider mb-4 animate-pulse">
+                ✨ Discover the Magic
+            </div>
+            <h1 class="text-5xl md:text-7xl font-black tracking-tight mb-4">
+                <span
+                    class="bg-gradient-to-r from-cyan-400 via-indigo-400 to-pink-500 text-transparent bg-clip-text drop-shadow-sm">
+                    Movie Hub
+                </span>
+            </h1>
+            <p class="text-slate-400 text-base md:text-lg max-w-md mx-auto font-light">
+                Search your favourite movies in seconds..
+            </p>
+        </header>
+
+        <!-- Search  -->
+        <div
+            class="max-w-2xl mx-auto mb-16 p-2 rounded-2xl border border-slate-800 bg-slate-900/60 backdrop-blur-xl neon-glow">
+            <form action="" id="movieForm" class="flex flex-col sm:flex-row gap-2">
+                <div class="relative flex-1">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-slate-500">
+                        🔍
+                    </span>
+                    <input id="movieInput" type="text" placeholder="Search movie title (e.g. Inception, Matrix)..."
+                        class="w-full bg-slate-950/40 text-white placeholder-slate-500 pl-11 pr-4 py-4 rounded-xl border border-slate-800/80 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all duration-300 text-base">
+                </div>
+                <button type="submit" target="_blank"
+                    class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-indigo-600 hover:to-pink-600 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-indigo-500/25 hover:shadow-pink-500/30 hover:scale-[1.02] active:scale-95 transition-all duration-300">
+                    Search
+                </button>
+            </form>
+        </div>
+
+        <!-- Movie Results Grid -->
+        <div id="movieHub" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w-full border-t border-slate-900 bg-slate-950/40 py-6 mt-auto">
+        <div
+            class="container mx-auto px-4 max-w-6xl flex  sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+            <div>
+                © 2026 Movie Hub. All rights reserved.
+            </div>
+
+            <div class="flex items-center gap-2 text-xs">
+                <span class="text-slate-500 font-light">Designed & Coded by</span>
+                <span
+                    class="text-pink-400 font-extrabold tracking-wider border-b border-pink-500/30 pb-0.5 shadow-pink-500/10 drop-shadow-sm">
+                    ✨ GAGANDEEP KAUR
+                </span>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
+
+
